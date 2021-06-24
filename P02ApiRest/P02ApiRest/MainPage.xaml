@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="P02ApiRest.MainPage">
+    <StackLayout Padding="20" >
+        <Button Visual="Material" Text="Country"
+                Clicked="OnButtonClicked" />
+        <CollectionView HorizontalScrollBarVisibility="Always" SelectedItem=""   x:Name="collectionView">
+            <CollectionView.ItemTemplate  >
+                <DataTemplate  >
+                   
+                    <Frame  CornerRadius="5" HasShadow="True">
+                         <StackLayout >
+                        <Label Text="{Binding name}"
+                               FontSize="Medium" />
+                         <Label Text="{Binding subregion}"
+                               TextColor="black"
+                               FontSize="Small" />
+                         <Label Text="{Binding alpha2Code}"
+                               TextColor="black"
+                               FontSize="Caption" />
+                         <Label Text="{Binding alpha3Code}"
+                               TextColor="black"
+                               FontSize="Caption" />
+                        <Label Text="{Binding population}"
+                            TextColor="black"
+                            FontSize="Small" />
+                        <Label Text="{Binding demonym}"
+                            TextColor="black"
+                            FontSize="Caption" />
+                         <Label Text="{Binding capital}"
+                        TextColor="black"
+                        FontSize="Caption" />
+                        </StackLayout>
+                    </Frame>
+                   
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
