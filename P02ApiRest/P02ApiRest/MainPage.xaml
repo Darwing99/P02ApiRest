@@ -14,31 +14,40 @@
         
     </ContentPage.Resources>
     <StackLayout Padding="20" >
-        <Button Visual="Material" Text="Country"
-                Clicked="OnButtonClicked" />
-        <CollectionView HorizontalScrollBarVisibility="Default" VerticalScrollBarVisibility="Default"  SelectedItem=""   x:Name="collectionView">
+      
+            <StackLayout WidthRequest="100">
+                <Label Text="Selecciona Region"></Label>
+                <Picker Visual="Material" x:Name="pickerRegion"  SelectedIndexChanged="pickerRegion_SelectedIndexChanged"></Picker>
+            </StackLayout>
+            <SearchBar Visual="Material"  Placeholder="Buscar Pais" x:Name="search" TextChanged="SearchBar_TextChanged"></SearchBar>
+
+
+
+
+
+        <CollectionView  HorizontalScrollBarVisibility="Default" VerticalScrollBarVisibility="Default"  SelectedItem=""   x:Name="collectionView">
             <CollectionView.ItemTemplate  >
-                <DataTemplate   >
+                <DataTemplate    >
                    
                     <Frame  CornerRadius="5" HasShadow="True">
                         <StackLayout > 
                             
                          <Grid >
-                                <Label Grid.Row="0"  Grid.Column="0" Text="{Binding name}"
+                                <Label Grid.Row="1"  Grid.Column="0" Text="{Binding name}"
                                FontSize="Medium" />
-                                <Label  Grid.Row="0" Grid.Column="1" Text="{Binding subregion}"
+                                <Label  Grid.Row="1" Grid.Column="1" Text="{Binding subregion}"
                                TextColor="black"
                                FontSize="Small" />
                         
-                                <Label  Grid.Row="0"  Grid.Column="2" Text="{Binding population}"
+                                <Label  Grid.Row="1"  Grid.Column="2" Text="{Binding population}"
                                 TextColor="black"
                                 FontSize="Small" />
                               
-                                <Label  Grid.Row="0" Grid.Column="3" Text="{Binding capital}"
+                                <Label  Grid.Row="1" Grid.Column="3" Text="{Binding capital}"
                                 TextColor="black" 
                                 FontSize="Caption" />
 
-                                <ffimageloading:CachedImage  Background="red" Grid.Row="0" Grid.Column="4" 
+                                <ffimageloading:CachedImage  Background="red" Grid.Row="1" Grid.Column="4" 
                                                             DownsampleToViewSize="true" Source="{Binding flag, Converter={StaticResource SvgImageSourceConverter}}">
                                 </ffimageloading:CachedImage>
 

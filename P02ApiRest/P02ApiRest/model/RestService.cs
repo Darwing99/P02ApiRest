@@ -35,6 +35,7 @@ namespace P02ApiRest.model
                 {
                     string informacion = await respuesta.Content.ReadAsStringAsync();
                     lista = JsonConvert.DeserializeObject<List<ModelCountry>>(informacion);
+                    
                 }
             }
             catch (Exception ex)
