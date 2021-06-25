@@ -39,7 +39,7 @@ namespace P02ApiRest.model
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("\tERROR {0}", ex.Message);
+                Debug.WriteLine("Error", ex.Message);
             }
 
             return lista;

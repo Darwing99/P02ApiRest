@@ -7,7 +7,7 @@ namespace P02ApiRest.model
     public static class DataConstants
     {
        
-            public const string url = "https://restcountries.eu/rest/v2/region/europe";
+            public const string url = "https://restcountries.eu/rest/v2/region/americas";
         
     }
 }

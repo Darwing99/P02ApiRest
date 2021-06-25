@@ -5,32 +5,32 @@
     <StackLayout Padding="20" >
         <Button Visual="Material" Text="Country"
                 Clicked="OnButtonClicked" />
-        <CollectionView HorizontalScrollBarVisibility="Always" SelectedItem=""   x:Name="collectionView">
+        <CollectionView HorizontalScrollBarVisibility="Default" VerticalScrollBarVisibility="Default"  SelectedItem=""   x:Name="collectionView">
             <CollectionView.ItemTemplate  >
-                <DataTemplate  >
+                <DataTemplate   >
                    
                     <Frame  CornerRadius="5" HasShadow="True">
-                         <StackLayout >
-                        <Label Text="{Binding name}"
+                        <StackLayout > 
+                            
+                         <Grid >
+                                <Label Grid.Row="0"  Grid.Column="0" Text="{Binding name}"
                                FontSize="Medium" />
-                         <Label Text="{Binding subregion}"
+                                <Label  Grid.Row="0" Grid.Column="1" Text="{Binding subregion}"
                                TextColor="black"
                                FontSize="Small" />
-                         <Label Text="{Binding alpha2Code}"
-                               TextColor="black"
-                               FontSize="Caption" />
-                         <Label Text="{Binding alpha3Code}"
-                               TextColor="black"
-                               FontSize="Caption" />
-                        <Label Text="{Binding population}"
-                            TextColor="black"
-                            FontSize="Small" />
-                        <Label Text="{Binding demonym}"
-                            TextColor="black"
-                            FontSize="Caption" />
-                         <Label Text="{Binding capital}"
-                        TextColor="black"
-                        FontSize="Caption" />
+                        
+                                <Label  Grid.Row="0"  Grid.Column="2" Text="{Binding population}"
+                                TextColor="black"
+                                FontSize="Small" />
+                              
+                                <Label  Grid.Row="0" Grid.Column="3" Text="{Binding capital}"
+                                TextColor="black"
+                                FontSize="Caption" />
+                               
+
+                            </Grid>
+                        
+                        
                         </StackLayout>
                     </Frame>
                    
