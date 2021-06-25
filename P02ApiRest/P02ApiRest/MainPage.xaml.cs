@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.Net.Http;
 using P02ApiRest.model;
-
+using FFImageLoading;
 namespace P02ApiRest
 {
     public partial class MainPage : ContentPage

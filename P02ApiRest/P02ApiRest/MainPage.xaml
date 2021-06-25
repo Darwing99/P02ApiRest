@@ -1,7 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="P02ApiRest.MainPage">
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+                xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+                xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+                x:Class="P02ApiRest.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ffimageloadingsvg:SvgImageSourceConverter x:Key="SvgImageSourceConverter">
+                
+            </ffimageloadingsvg:SvgImageSourceConverter>
+        </ResourceDictionary>
+        
+    </ContentPage.Resources>
     <StackLayout Padding="20" >
         <Button Visual="Material" Text="Country"
                 Clicked="OnButtonClicked" />
@@ -24,9 +35,12 @@
                                 FontSize="Small" />
                               
                                 <Label  Grid.Row="0" Grid.Column="3" Text="{Binding capital}"
-                                TextColor="black"
+                                TextColor="black" 
                                 FontSize="Caption" />
-                               
+
+                                <ffimageloading:CachedImage  Background="red" Grid.Row="0" Grid.Column="4" 
+                                                            DownsampleToViewSize="true" Source="{Binding flag, Converter={StaticResource SvgImageSourceConverter}}">
+                                </ffimageloading:CachedImage>
 
                             </Grid>
                         
