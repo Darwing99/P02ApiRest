@@ -30,7 +30,7 @@
             <CollectionView.ItemTemplate  >
                 <DataTemplate    >
                    
-                    <Frame  CornerRadius="5" HasShadow="True">
+                    <Frame  BorderColor="AliceBlue" HasShadow="True">
                         <StackLayout > 
                             
                          <Grid >
