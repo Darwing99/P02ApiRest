@@ -13,7 +13,12 @@
         </ResourceDictionary>
         
     </ContentPage.Resources>
+    
+        
     <StackLayout Padding="20" >
+     <RefreshView x:Name="refrescar" IsRefreshing="True" RefreshColor="Red">
+        
+    </RefreshView>
       
             <StackLayout WidthRequest="100" Padding="-10,-10">
                 <Label Text="Selecciona Region"></Label>
@@ -22,33 +27,31 @@
         <StackLayout Padding="-30,-10,-10,10">
             <SearchBar Visual="Material"  Placeholder="Buscar Pais" x:Name="search" TextChanged="SearchBar_TextChanged"></SearchBar>
         </StackLayout>
-          
 
 
 
-        <CollectionView  HorizontalScrollBarVisibility="Default" VerticalScrollBarVisibility="Default"  SelectedItem=""   x:Name="collectionView">
-            <CollectionView.ItemTemplate  >
-                <DataTemplate    >
+        <ListView RowHeight="100"  HorizontalScrollBarVisibility="Default" ItemSelected="selectedItem"  VerticalScrollBarVisibility="Default"   x:Name="collectionView">
+            <ListView.ItemTemplate  >
+                <DataTemplate     >
                    
-                    <Frame  BorderColor="AliceBlue" HasShadow="True">
+                    <ViewCell  >
                         <StackLayout > 
                             
-                         <Grid >
-                                <Label Grid.Row="1"  Grid.Column="0" Text="{Binding name}"
+                         <Grid VerticalOptions="Center" HeightRequest="100" >
+                                <Label  HeightRequest="100" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  Grid.Row="1"  Grid.Column="0" Text="{Binding name}"
                                FontSize="Medium" />
-                                <Label  Grid.Row="1" Grid.Column="1" Text="{Binding subregion}"
+                                <Label  HeightRequest="100" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"   Grid.Row="1" Grid.Column="1" Text="{Binding subregion}"
                                TextColor="black"
                                FontSize="Small" />
-                        
-                                <Label  Grid.Row="1"  Grid.Column="2" Text="{Binding population}"
+
+                                <Label  HeightRequest="100" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  Grid.Row="1"  Grid.Column="2" Text="{Binding population}"
                                 TextColor="black"
                                 FontSize="Small" />
-                              
-                                <Label  Grid.Row="1" Grid.Column="3" Text="{Binding capital}"
+                                <Label  HeightRequest="100" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"   Grid.Row="1" Grid.Column="3" Text="{Binding capital}"
                                 TextColor="black" 
                                 FontSize="Caption" />
 
-                                <ffimageloading:CachedImage  Background="red" Grid.Row="1" Grid.Column="4" 
+                                <ffimageloading:CachedImage HorizontalOptions="CenterAndExpand" HeightRequest="100" VerticalOptions="CenterAndExpand" Background="red" Grid.Row="1" Grid.Column="4" 
                                                             DownsampleToViewSize="true" Source="{Binding flag, Converter={StaticResource SvgImageSourceConverter}}">
                                 </ffimageloading:CachedImage>
 
@@ -56,10 +59,10 @@
                         
                         
                         </StackLayout>
-                    </Frame>
+                    </ViewCell>
                    
                 </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </ContentPage>

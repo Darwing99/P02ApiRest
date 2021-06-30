@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mapa="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="P02ApiRest.Mapa">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <Label HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" x:Name="nombre" Text="{Binding nombre}"></Label>
+                        <Label IsVisible="false" x:Name="descripcion" Text="{Binding capital}" ></Label>
+                        <StackLayout Padding="5" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <StackLayout HorizontalOptions="Center" Orientation="Vertical">
+                                <Label Text="Latitud"></Label>
+                                <Label x:Name="latitud" FontAttributes="Bold" FontSize="20" Text="{Binding latitude}"></Label>
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="Center" Orientation="Vertical">
+                                <Label Text="Longitud"></Label>
+                                <Label x:Name="longitud" FontAttributes="Bold" FontSize="20" Text="{Binding longitude}"></Label>
+                            </StackLayout>
+                           
+
+
+                        </StackLayout>
+
+                        <Frame HasShadow="False"  HeightRequest="400">
+                            <mapa:Map FlowDirection="MatchParent" HasScrollEnabled="True"  MoveToLastRegionOnLayoutChange="True"
+                                  MapType="Hybrid"  TrafficEnabled="True"  HasZoomEnabled="True"  HorizontalOptions="FillAndExpand" HeightRequest="600"  x:Name="m" IsShowingUser="True">
+
+                            </mapa:Map>
+                        </Frame>
+
+
+                    </StackLayout>
+                    
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
